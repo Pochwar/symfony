@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>Commande N°{{ cart.id }}</p>
+<p>Number : {{ cart.number }}</p>
+<p>Status : {{ cart.status }}</p>
+<p>Date : {{ cart.date|date('d/m/Y h:i') }}</p>
+{% for line in cart.lines %}
+    <p> {{ line.id }} | {{ line.designation }} | {{ line.price }} | {{ line.quantity }}</p>
+{% endfor %}
+</div>
+<a href="{{ path('order_add_line', {'id': cart.id})}}">ajouter une ligne</a><br/>
+<a href="{{ path('order_list')}}">retour à la liste</a>
+</body>
+</html>

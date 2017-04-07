@@ -1,0 +1,8 @@
+blog:
+    resource:   "routing/blog.yml"
+    prefix:     "/blog"
+
+blog_homepage:
+    path:       /
+    defaults:   { _controller: HelloBundle:Default:index }
+

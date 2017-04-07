@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titre }}</title>
+</head>
+<body>
+<p>{{ route }}</p>
+<p>{{ accueil }}</p>
+<p>Liste des commandes</p>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>number</th>
+        <th>status</th>
+        <th>date</th>
+    </tr>
+    {% for cart in carts %}
+        <tr>
+            <td><a href="{{ path('order_info', {'id': cart.id}) }}">{{ cart.id }}</a></td>
+            <td>{{ cart.number }}</td>
+            <td>{{ cart.status }}</td>
+            <td>{{ cart.date|date('d/m/Y h:i') }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+blog_list:
+    path:       /
+    defaults:
+        _controller: HelloBundle:Default:list
+
+blog_article:
+    path:       /{slug}.{_format}
+    defaults:
+        _controller:    HelloBundle:Default:article
+        _format:        html
+    requirements:
+        slug:       "[\w-]+"
+        _format:    html|json
